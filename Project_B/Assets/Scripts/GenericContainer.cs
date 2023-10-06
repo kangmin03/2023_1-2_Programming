@@ -2,26 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenericContainer<T>  //제너릭 형식 Class로 사용
+public class GenericContainer<T>        //제너릭 형식 Class로 사용하기 위해서 선언
 {
-    private T[] items;
-    private int currentIndex = 0;
+    private T[] items;                  
+    private int currentIndex = 0;       
 
-    public GenericContainer(int capacity)   //class애소 class 이름과 같은 함수는 보통 생성자
+    public GenericContainer(int capacity)   
     {
         items = new T[capacity];
     }
 
-    public void Add(T item)  //컨테이너에 값을 넣는다
+    public void Add(T item)                
     {
-        if(currentIndex < items.Length)   //컨테이너 배열 칸 이상 될 경우 막는다
-        {
-            items[currentIndex] = item;   //받은 값은 배열에 넣는다.
-            currentIndex++;      //인덱스를 증가시킨다.
-        }
+       if(currentIndex < items.Length)      
+       {
+            items[currentIndex] = item;     
+            currentIndex++;                 
+       }
     }
 
-    public T[] GetItems()    //배열값 리턴
+    public T[] GetItems()                  
     {
         return items;
     }
